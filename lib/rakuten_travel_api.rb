@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require_relative "rakuten_travel_api/version"
+require_relative "rakuten_travel_api/client"
+require_relative "rakuten_travel_api/request"
+require_relative "rakuten_travel_api/errors"
 
 module RakutenTravelApi
   class Error < StandardError; end

@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["RikuKomiya"]
   spec.email = ["RikuKomiya@users.noreply.github.com"]
 
-  spec.summary = "This is API Clinet for rakuten travel api"
-  spec.description = "This is API Clinet for rakuten travel api"
+  spec.summary = "This is API Client for rakuten travel api"
+  spec.description = "This is API Client for rakuten travel api"
   spec.homepage = "https://github.com/RikuKomiya/rakuten_travel_api"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
