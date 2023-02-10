@@ -19,3 +19,9 @@ Style/StringLiterals:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: false
+
+Lint/EmptyClass:
+  Enabled: false
