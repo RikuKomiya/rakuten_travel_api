@@ -14,13 +14,19 @@ module RakutenTravelApi
       @params = {
         format: "json",
         requestType: 2,
-        applicationId: RakutenTravelApi.configuration.application_id,
+        applicationId: RakutenTravelApi.application_id,
         responseType: "large"
       }.merge!(args)
+
+      return if RakutenTravelApi.affiliate_id.nil?
+
+      @params.merge!({
+                       affiliate_id: RakutenTravelApi.affiliate_id
+                     })
     end
 
     def send_request
-      res = get_request
+      res = create_request
       code = res.code.to_i
 
       RakutenTravelApi::Errors.raise_response_error(code, res.body) unless code == 200
@@ -30,7 +36,7 @@ module RakutenTravelApi
 
     private
 
-    def get_request
+    def create_request
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
 
