@@ -22,14 +22,10 @@ module RakutenTravelApi
     def send_request
       res = get_request
       code = res.code.to_i
-      case code
-      when 200
-        JSON.parse(res.body)
-      when 404
-        raise RakutenTravelApi::Errors::NotFoundError
-      else
-        raise StandardError
-      end
+
+      RakutenTravelApi::Errors.raise_error(code, res.body) unless code == 200
+
+      RakutenTravelApi::Response.new(JSON.parse(res.body))
     end
 
     private
