@@ -10,11 +10,13 @@ module RakutenTravelApi
 
     def keyword_hotel_search(keyword:, params: {})
       path = "/services/api/Travel/KeywordHotelSearch/20170426"
-      RakutenTravelApi::Request.new(
+      req = RakutenTravelApi::Request.new(
         path,
         keyword: keyword,
         **params
       )
+
+      req.send_request
     end
   end
 end
