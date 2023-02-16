@@ -4,8 +4,9 @@ require "net/http"
 
 module RakutenTravelApi
   class Client
-    def initialize(application_id: nil)
-      RakutenTravelApi.configuration.application_id = application_id if application_id
+    def initialize(application_id: nil, affiliate_id: nil)
+      RakutenTravelApi.application_id = application_id if application_id
+      RakutenTravelApi.affiliate_id = affiliate_id if affiliate_id
     end
 
     def keyword_hotel_search(keyword:, params: {})
