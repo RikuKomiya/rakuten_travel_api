@@ -2,7 +2,9 @@
 
 module RakutenTravelApi
   class Errors
-    class BaseError < StandardError
+    class ApplicationIdMissingError < StandardError; end
+
+    class ResponseError < StandardError
       attr_accessor :code, :message
 
       def initialize(code, message)
@@ -11,17 +13,17 @@ module RakutenTravelApi
       end
     end
 
-    class WrongParameterError < BaseError; end
+    class WrongParameterError < ResponseError; end
 
-    class NotFoundError < BaseError; end
+    class NotFoundError < ResponseError; end
 
-    class TooManyRequestError < BaseError; end
+    class TooManyRequestError < ResponseError; end
 
-    class SystemError < BaseError; end
+    class SystemError < ResponseError; end
 
-    class ServiceUnavailableError < BaseError; end
+    class ServiceUnavailableError < ResponseError; end
 
-    class NotDefinedError < BaseError; end
+    class NotDefinedError < ResponseError; end
 
     def self.raise_error(code, res_body)
       klass = case code
