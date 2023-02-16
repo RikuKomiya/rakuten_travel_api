@@ -23,7 +23,7 @@ module RakutenTravelApi
       res = get_request
       code = res.code.to_i
 
-      RakutenTravelApi::Errors.raise_error(code, res.body) unless code == 200
+      RakutenTravelApi::Errors.raise_response_error(code, res.body) unless code == 200
 
       RakutenTravelApi::Response.new(JSON.parse(res.body))
     end

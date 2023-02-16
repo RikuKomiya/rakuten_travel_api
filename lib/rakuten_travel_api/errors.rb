@@ -25,7 +25,7 @@ module RakutenTravelApi
 
     class NotDefinedError < ResponseError; end
 
-    def self.raise_error(code, res_body)
+    def self.raise_response_error(code, res_body)
       klass = case code
               when 400
                 WrongParameterError
