@@ -17,11 +17,11 @@ module RakutenTravelApi
       keyword_init: true
     )
 
-    def initialize(json_reponse)
+    def initialize(json_response)
       @paging_info = PagingInfoStruct.new(
-        json_reponse["pagingInfo"].to_h.transform_keys(&:to_snake)
+        json_response["pagingInfo"].to_h.transform_keys(&:to_snake)
       )
-      @hotels = json_reponse["hotels"].map do |json_hotel|
+      @hotels = json_response["hotels"].map do |json_hotel|
         Hotel.new(json_hotel["hotel"])
       end
     end
