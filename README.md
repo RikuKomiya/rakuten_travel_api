@@ -22,7 +22,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+RakutenTravelApi.configure do |c|
+  c.application_id = application_id
+  c.affiliate_id = affiliate_id #option
+end
+
+client = RakutenTravelApi::Client.new
+
+client.keyword_hotel_search(keyword: "新宿")
+
+hotels = client.hotels
+
+hotels.first.hotel_name # => 新宿由縁
+```
+
 
 ## Development
 
