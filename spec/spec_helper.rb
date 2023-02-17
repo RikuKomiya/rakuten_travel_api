@@ -4,6 +4,8 @@ require "rakuten_travel_api"
 require "vcr"
 require "webmock"
 
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
@@ -25,4 +27,6 @@ VCR.configure do |c|
     record: :new_episodes,
     match_requests_on: %i[method path query body]
   }
+  c.filter_sensitive_data("<APPLICATION_ID>") { RakutenTravelApi.application_id }
+  c.filter_sensitive_data("<AFFILIATE_ID>") { RakutenTravelApi.affiliate_id }
 end
