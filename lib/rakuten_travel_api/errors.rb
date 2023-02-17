@@ -4,6 +4,8 @@ module RakutenTravelApi
   class Errors
     class ApplicationIdMissingError < StandardError; end
 
+    class UnsupportedParamsError < StandardError; end
+
     class ResponseError < StandardError
       attr_accessor :code, :message
 

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "string_helper"
-require "byebug"
 
 module RakutenTravelApi
   class Hotel

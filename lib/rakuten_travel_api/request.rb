@@ -8,21 +8,10 @@ module RakutenTravelApi
   class Request
     attr_reader :params, :url, :path
 
-    def initialize path, **args
+    def initialize(path:, params:)
       @url = URI.parse("https://app.rakuten.co.jp/")
       @path = path
-      @params = {
-        format: "json",
-        requestType: 2,
-        applicationId: RakutenTravelApi.application_id,
-        responseType: "large"
-      }.merge!(args)
-
-      return if RakutenTravelApi.affiliate_id.nil?
-
-      @params.merge!({
-                       affiliate_id: RakutenTravelApi.affiliate_id
-                     })
+      @params = params
     end
 
     def send_request
