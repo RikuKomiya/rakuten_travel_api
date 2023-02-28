@@ -30,9 +30,9 @@ end
 
 client = RakutenTravelApi::Client.new
 
-client.keyword_hotel_search(keyword: "新宿")
+res = client.keyword_hotel_search(keyword: "新宿")
 
-hotels = client.hotels
+hotels = res.hotels
 
 hotels.first.hotel_name # => 新宿由縁
 ```
