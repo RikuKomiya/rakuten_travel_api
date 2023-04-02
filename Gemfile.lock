@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rakuten_travel_api (0.1.0)
+    rakuten_travel_api (0.1.1)
 
 GEM
   remote: https://rubygems.org/
