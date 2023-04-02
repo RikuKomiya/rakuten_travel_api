@@ -3,6 +3,9 @@
 require "rakuten_travel_api"
 require "vcr"
 require "webmock"
+require "dotenv"
+
+Dotenv.load
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 

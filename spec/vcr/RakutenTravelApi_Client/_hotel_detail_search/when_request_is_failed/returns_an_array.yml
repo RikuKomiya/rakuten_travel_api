@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.rakuten.co.jp/services/api/Travel/HotelDetailSearch/20170426?applicationId=<APPLICATION_ID>&datumType=1&formatVersion=1&hotelNo=1000000&responseType=large
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: '404'
+    headers:
+      Date:
+      - Sun, 02 Apr 2023 08:22:47 GMT
+      Server:
+      - Apache
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Language:
+      - ja-JP
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '58'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error_description":"Data Not Found","error":"not_found"}'
+  recorded_at: Sun, 02 Apr 2023 08:22:47 GMT
+recorded_with: VCR 6.1.0

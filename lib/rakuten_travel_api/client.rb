@@ -20,5 +20,17 @@ module RakutenTravelApi
 
       req.send_request
     end
+
+    def hotel_detail_search(hotel_no:, options: {})
+      path = "/services/api/Travel/HotelDetailSearch/20170426"
+      params = RakutenTravelApi::Parameter.new(options.merge(hotelNo: hotel_no))
+                                          .to_params_for_hotel_detail_search
+      req = RakutenTravelApi::Request.new(
+        path: path,
+        params: params
+      )
+
+      req.send_request
+    end
   end
 end

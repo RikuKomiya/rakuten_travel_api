@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426?applicationId=<APPLICATION_ID>&formatVersion=1&keyword=hogehoge&responseType=large
+    uri: https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426?<APPLICATION_ID>=<APPLICATION_ID>&formatVersion=1&keyword=hogehoge&responseType=large
     body:
       encoding: US-ASCII
       string: ''
@@ -40,4 +40,84 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"error_description":"Data Not Found","error":"not_found"}'
   recorded_at: Fri, 17 Feb 2023 15:18:20 GMT
+- request:
+    method: get
+    uri: https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426?<APPLICATION_ID>=<APPLICATION_ID>&datumType=1&formatVersion=1&keyword=hogehoge&responseType=large
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: '400'
+    headers:
+      Date:
+      - Sun, 02 Apr 2023 08:20:29 GMT
+      Server:
+      - Apache
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Language:
+      - ja-JP
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '77'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error_description":"specify valid <APPLICATION_ID>","error":"wrong_parameter"}'
+  recorded_at: Sun, 02 Apr 2023 08:20:29 GMT
+- request:
+    method: get
+    uri: https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426?applicationId=<APPLICATION_ID>&datumType=1&formatVersion=1&keyword=hogehoge&responseType=large
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: '404'
+    headers:
+      Date:
+      - Sun, 02 Apr 2023 08:24:17 GMT
+      Server:
+      - Apache
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Language:
+      - ja-JP
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '58'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error_description":"Data Not Found","error":"not_found"}'
+  recorded_at: Sun, 02 Apr 2023 08:24:17 GMT
 recorded_with: VCR 6.1.0

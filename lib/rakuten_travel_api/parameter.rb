@@ -16,6 +16,12 @@ module RakutenTravelApi
       to_params(default_params)
     end
 
+    def to_params_for_hotel_detail_search
+      default_params = default_common_params.merge(default_hotel_detail_search_params)
+
+      to_params(default_params)
+    end
+
     private
 
     attr_reader :application_id, :affiliate_id, :options
@@ -47,7 +53,7 @@ module RakutenTravelApi
         carrier: nil,
         page: nil,
         hits: nil,
-        datumType: nil,
+        datumType: 1,
         keyword: nil,
         middleClassCode: nil,
         searchField: nil,
@@ -55,6 +61,16 @@ module RakutenTravelApi
         hotelThumbnailSize: nil,
         responseType: "large",
         sort: nil
+      }
+    end
+
+    def default_hotel_detail_search_params
+      {
+        hotelNo: nil,
+        carrier: nil,
+        datumType: 1,
+        hotelThumbnailSize: nil,
+        responseType: "large"
       }
     end
   end
